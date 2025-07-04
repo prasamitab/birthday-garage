@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shiroo's Birthday Garage</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e);
+      color: white;
+      overflow-x: hidden;
+    }
+    .centered {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .start-button {
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 18px;
+      background: #ff4081;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      color: white;
+      transition: background 0.3s;
+    }
+    .start-button:hover {
+      background: #e91e63;
+    }
+    .level {
+      display: none;
+      padding: 40px 20px;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .show {
+      display: block;
+      animation: fadeIn 1s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .art-img {
+      width: 80%;
+      max-width: 400px;
+      border: 4px solid white;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    .quiz-input {
+      padding: 10px;
+      width: 60%;
+      margin: 20px auto;
+      border-radius: 8px;
+      font-size: 16px;
+      border: none;
+    }
+    .submit-btn {
+      background: #4caf50;
+      padding: 10px 20px;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background: #388e3c;
+    }
+  </style>
+</head>
+<body>
+  <div id="intro" class="centered">
+    <h2>Only one person has the key to this garage…</h2>
+    <p style="margin-top: 20px">🛠️ "Your Birthday Garage, Baby — Only You Have the Keys."</p>
+    <button class="start-button" onclick="showLevel(0)">👉 Start the Ride 🚗</button>
+    <audio autoplay loop>
+      <source src="https://www.dropbox.com/scl/fi/6z5x6r8g35zzy3b6nxl7v/A_Thousand_Years.mp3?rlkey=1v1vuhtgn1n2t1mngzxgfs3f7&raw=1" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <div id="level0" class="level">
+    <h2>🚪 The Garage Door Opens</h2>
+    <p>Welcome to your private garage, Shiroo 💛</p>
+    <button class="start-button" onclick="showLevel(1)">Next →</button>
+  </div>
+
+  <div id="level1" class="level">
+    <h2>🎨 Art Zone</h2>
+    <p>Made with my hands, full of memories with you.</p>
+    <img src="https://www.dropbox.com/scl/fi/rx7i3ol67spsf9pbxqh9o/car_drawing_a3.jpg?rlkey=3uvhszdlz3h6yoe9mkk98t4e2&raw=1" alt="Art Drawing" class="art-img" />
+    <button class="start-button" onclick="showLevel(2)">Next →</button>
+  </div>
+
+  <div id="level2" class="level">
+    <h2>🏁 Achievements Lane</h2>
+    <p>Our milestones together, glowing like headlights on the road of us.</p>
+    <ul style="text-align: left">
+      <li>🚗 First time we talked</li>
+      <li>🎉 That hilarious ride memory</li>
+      <li>💬 Late-night rants & endless drives</li>
+    </ul>
+    <button class="start-button" onclick="showLevel(3)">Next →</button>
+  </div>
+
+  <div id="level3" class="level">
+    <h2>💌 Love Quiz</h2>
+    <p>What’s my favorite sketch?</p>
+    <input id="quizAnswer" class="quiz-input" placeholder="Type your answer...">
+    <br>
+    <button class="submit-btn" onclick="checkAnswer()">Final Surprise 🎉</button>
+    <p id="quizResult"></p>
+  </div>
+
+  <div id="level4" class="level">
+    <h2>💛 The Heart Engine</h2>
+    <p>Some people just get you — like roads get wheels. You’re that person.</p>
+    <p style="margin-top: 30px; font-size: 20px"><strong>Only You Have the Keys.</strong></p>
+  </div>
+
+  <script>
+    function showLevel(level) {
+      document.getElementById("intro").style.display = "none";
+      for (let i = 0; i <= 4; i++) {
+        document.getElementById("level" + i).classList.remove("show");
+      }
+      document.getElementById("level" + level).classList.add("show");
+    }
+
+    function checkAnswer() {
+      const answer = document.getElementById("quizAnswer").value.trim().toLowerCase();
+      const result = document.getElementById("quizResult");
+      if (answer === "shahzeb") {
+        result.textContent = "✅ Correct! Unlocking the final surprise...";
+        setTimeout(() => showLevel(4), 1500);
+      } else {
+        result.textContent = "❌ Try again, Shiroo.";
+      }
+    }
+  </script>
+</body>
+</html>
