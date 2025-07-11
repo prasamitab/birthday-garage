@@ -1,14 +1,13 @@
 body, html {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
   height: 100vh;
-  font-family: 'Orbitron', sans-serif;
   background: #000;
   color: white;
+  font-family: 'Orbitron', sans-serif;
 }
 
-/* Garage door animation */
 .garage-door {
   position: fixed;
   width: 100%;
@@ -19,11 +18,11 @@ body, html {
 }
 
 @keyframes openDoor {
-  0% { transform: translateY(0%); }
+  0% { transform: translateY(0); }
   100% { transform: translateY(-100%); }
 }
 
-/* Star background layers */
+/* Stars Background */
 #stars, #stars2, #stars3 {
   position: fixed;
   width: 100%;
@@ -49,48 +48,93 @@ body, html {
 }
 
 .container {
-  position: relative;
-  text-align: center;
   padding: 5% 10%;
-  z-index: 2;
-  overflow: hidden;
+  text-align: center;
   display: none;
 }
 
 .glow {
   font-size: 3em;
   font-family: 'Pacifico', cursive;
-  animation: glow 2s infinite, colorCycle 5s infinite alternate;
+  animation: glow 2s infinite;
 }
 
 @keyframes glow {
-  0% { text-shadow: 0 0 5px #fff, 0 0 15px #f9f586; }
-  50% { text-shadow: 0 0 20px #f0f, 0 0 40px #ff6ec4; }
-  100% { text-shadow: 0 0 5px #fff, 0 0 15px #00f2fe; }
+  0%, 100% { text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff; }
+  50% { text-shadow: 0 0 20px #00f2fe, 0 0 30px #00f2fe; }
 }
 
-@keyframes colorCycle {
+.rainbow-text {
+  animation: rainbow 5s infinite;
+}
+
+@keyframes rainbow {
   0% { color: #ff6ec4; }
   25% { color: #7873f5; }
   50% { color: #00f2fe; }
   75% { color: #f9f586; }
-  100% { color: #ffffff; }
+  100% { color: #ff6ec4; }
 }
 
 .subline {
   font-size: 1.2em;
   margin-top: -10px;
   color: #f9f586;
-  font-family: 'Orbitron', sans-serif;
 }
 
 .typewriter {
-  font-size: 1em;
   margin-top: 40px;
   color: #fff;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1em;
+  font-family: 'Shadows Into Light', cursive;
   white-space: pre-line;
+}
+
+/* Virtual Hug Animation */
+.virtual-hug {
+  margin-top: 40px;
+  animation: pulse 2s infinite;
+}
+.hug-heart {
+  font-size: 4em;
+  animation: bounce 1.5s infinite;
+}
+.hug-message {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.2em;
+  color: #ffccff;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Quiz */
+#quiz {
+  margin-top: 50px;
+}
+input {
+  padding: 5px;
+  margin-bottom: 10px;
+}
+button {
+  padding: 8px 16px;
+  background: #ff6ec4;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background: #ff47ab;
+}
+#quiz-result {
+  margin-top: 10px;
+  color: lightgreen;
 }
