@@ -1,15 +1,25 @@
-
 body {
-  background-color: #cce7ff;
+  background-color: #cce7ff; /* Sky blue */
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
-  padding: 40px;
+  padding: 20px;
+  color: #333;
 }
 
-h1 {
+.garage-door {
+  animation: openGarage 2s ease-out forwards;
+  overflow: hidden;
+}
+
+@keyframes openGarage {
+  0% { max-height: 0; opacity: 0; }
+  100% { max-height: 1000px; opacity: 1; }
+}
+
+.glow {
   font-size: 3rem;
   color: gold;
-  text-shadow: 0 0 10px #ff9;
+  text-shadow: 0 0 10px gold, 0 0 20px orange;
   animation: glow 2s infinite alternate;
 }
 
@@ -18,8 +28,56 @@ h1 {
   to { text-shadow: 0 0 20px orange; }
 }
 
-p {
-  max-width: 600px;
-  margin: 0 auto;
+.intro {
+  max-width: 700px;
+  margin: 20px auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.hug-animation {
+  margin-top: 50px;
   font-size: 1.2rem;
+}
+
+.hug {
+  font-size: 3rem;
+  animation: hugMove 0.8s infinite alternate ease-in-out;
+}
+
+@keyframes hugMove {
+  from { transform: scale(1); }
+  to { transform: scale(1.3); }
+}
+
+.quiz-section {
+  margin-top: 60px;
+}
+
+.quiz-section input {
+  padding: 8px;
+  font-size: 1rem;
+  width: 220px;
+  margin-top: 5px;
+}
+
+.quiz-section button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.quiz-section button:hover {
+  background-color: #ffaa00;
+}
+
+#result {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: green;
 }
