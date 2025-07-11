@@ -4,20 +4,53 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Birthday Garage</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Pacifico&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Pacifico&family=Shadows+Into+Light&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- Garage Door Opening -->
   <div class="garage-door"></div>
 
+  <!-- Galaxy Star Background -->
   <div id="stars"></div>
   <div id="stars2"></div>
   <div id="stars3"></div>
 
+  <!-- Main Birthday Section -->
   <div class="container" id="main-content">
-    <h1 class="glow">Happy Birthday Shirooo 💛</h1>
+    <h1 class="glow rainbow-text">Happy Birthday Shirooo 💛</h1>
     <h2 class="subline">You’re my co-driver for life 🚗</h2>
+
+    <!-- Typewriter Message -->
     <p class="typewriter" id="animated-msg"></p>
+
+    <!-- Virtual Hug Animation -->
+    <div class="virtual-hug">
+      <div class="hug-heart">🤗</div>
+      <p class="hug-message">Since I can't be there physically,<br>take this virtual hug from me to you 💖</p>
+    </div>
+
+    <!-- Quiz to Unlock Surprise -->
+    <div id="quiz">
+      <h3>🚗 Unlock Your Birthday Surprise!</h3>
+      <p>1. Hugs or Kisses?</p>
+      <input type="text" id="q1" /><br>
+      <p>2. Black or White?</p>
+      <input type="text" id="q2" /><br>
+      <p>3. Which superhero do you secretly think you are?</p>
+      <input type="text" id="q3" /><br>
+      <button onclick="checkAnswers()">Submit</button>
+      <p id="quiz-result"></p>
+    </div>
+
+    <!-- Hidden Surprise -->
+    <div id="surprise" style="display:none;">
+      <h2>🎉 Surprise Unlocked!</h2>
+      <p>Here's something special I made just for you...</p>
+      <!-- Add links to song/art later -->
+    </div>
+
   </div>
 
   <script src="script.js"></script>
