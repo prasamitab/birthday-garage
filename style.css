@@ -1,0 +1,25 @@
+
+body {
+  background-color: #cce7ff;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 3rem;
+  color: gold;
+  text-shadow: 0 0 10px #ff9;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px gold; }
+  to { text-shadow: 0 0 20px orange; }
+}
+
+p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
